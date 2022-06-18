@@ -1,0 +1,13 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block FinalProject_content %}
+
+<h2>Detalle del Empleo</h2>
+<hr></hr>
+<p><h3>Empleo: {{ empleo.empresa }}</h3></p>
+<p><h4>Periodo: {{ empleo.periodo }}</h4></p>
+<p><h4>Periodo: {{ empleo.puesto }}</h4></p>
+<h4>Descripción:</h4>
+<p><textarea readonly rows="7" cols="90" >{{ empleo.empresa }}</textarea></p>
+<p><a class="btn2 btn-primary" href="{% url 'empleo:empleo-list' %}">Regresar a la lista de empleos</a></p>
+{% endblock %}

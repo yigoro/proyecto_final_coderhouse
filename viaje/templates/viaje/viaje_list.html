@@ -1,0 +1,33 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block FinalProject_content %}
+
+<h2>Lista de Viajes</h2>
+{% if user.is_authenticated %}
+<a class="card_custom" href="{% url 'viaje:viaje-add' %}">Crear nuevo Viaje</a>
+{% endif %}
+<hr></hr>
+<ul>
+    {% for viaje in viaje_list %}
+    <li>
+        {{viaje}}
+        (
+            <a href="{% url 'viaje:viaje-detail' viaje.id %}">
+                <i class="fa fa-eye" style="color: rgb(0, 0, 255);"> </i>
+            </a>
+        {% if user.is_authenticated %}
+        |
+        <a href="{% url 'viaje:viaje-update' viaje.id %}">
+            <i class="fa fa-pencil" style="color: rgb(0, 0, 190);"> </i>
+        </a>
+        |
+        <a href="{% url 'viaje:viaje-delete' viaje.id %}">
+            <i class="fa fa-trash" style="color: rgb(0, 0, 100);"> </i>
+        </a>
+        {% endif %}
+        )
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

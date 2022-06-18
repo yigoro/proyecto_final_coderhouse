@@ -1,0 +1,14 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block FinalProject_content %}
+
+<h2>Detalle del Viaje</h2>
+<hr></hr>
+<p><h3>destino: {{ viaje.destino }}</h3></p>
+<p><h4>Vuelo: {{ viaje.nro_vuelo }}</h4></p>
+<p><h4>Fecha: {{ viaje.fecha }}</h4></p>
+<p><h4>Notas: {{ viaje.notas }}</h4></p>
+<h4>Descripción:</h4>
+<p><textarea readonly rows="7" cols="90" >{{ viaje.destino }}</textarea></p>
+<p><a class="btn2 btn-primary" href="{% url 'viaje:viaje-list' %}">Regresar a la lista de viajes</a></p>
+{% endblock %}
