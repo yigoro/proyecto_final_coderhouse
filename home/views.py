@@ -43,3 +43,16 @@ def search(request):
         context=context_dict,
         template_name="home/main.html",
     )
+
+
+def AboutSebaView(request):
+    return render(
+        request=request,
+        template_name="home/seba.html",
+    )
+
+def AboutStephyView(request):
+    return render(
+        request=request,
+        template_name="home/stephy.html",
+    )
