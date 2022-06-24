@@ -31,8 +31,7 @@ def search(request):
     context_dict = {**avatar_ctx}
     if request.GET['search_param']:
         search_param = request.GET['search_param']
-        query = Q(name__contains=search_param)
-        query.add(Q(code__contains=search_param), Q.OR)
+        query = Q(empresa__contains=search_param)
         empleos = Empleo.objects.filter(query)
         context_dict.update({
             'empleos': empleos,
