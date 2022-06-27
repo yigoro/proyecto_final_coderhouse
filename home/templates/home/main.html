@@ -16,7 +16,7 @@
 
 <form action="/search" method="GET">
     <div>
-        <input type="text" name="search_param" id="course_code_or_name" placeholder="Buscar.."
+        <input type="text" name="search_param" id="empleo_empresa" placeholder="Buscar.."
         {% if search_param %} value="{{ search_param }}" {% endif %}>
         <input type="submit" value="Buscar">
         <a style="color: blue" href="{% url 'home:main' %}"><i class="fa fa-undo"></i></a>

@@ -18,7 +18,9 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'home/css/styles.css' %}" rel="stylesheet" />
         <!-- Awesome fonts -->
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     </head>
     <body>
         <!-- Navigation-->
@@ -40,10 +42,10 @@
         <header class="masthead">
             <div class="container position-relative">
                 <div class="row justify-content-center">
-                    <div class="col-xl-6">
+                    <div class="col-xl-8">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="mb-5">Proyecto final <br>Bertolotti - Godoy<br> Django-CoderHouse</h1>
+                            <h1 class="mb-5">Proyecto final Bertolotti - Godoy<br> Django-CoderHouse</h1>
                             {% if messages %}
                                 {% for message in messages %}
                                 <h4><p style="color: rgb(131, 31, 0)" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p></h4>

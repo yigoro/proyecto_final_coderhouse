@@ -17,3 +17,8 @@ Stephany se encargó de realizar los templates de cada aplicacion.
 ```bash
 python manage.py runserver
 ```
+ -  SuperUser
+```bash
+name: admin
+password: admin
+```

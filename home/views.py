@@ -4,7 +4,7 @@ from django.db.models import Q
 from empleo.models import Empleo
 from user.models import Avatar
 
-def index(request):
+def home(request):
     avatar_ctx = get_avatar_url_ctx(request)
     context_dict = {**avatar_ctx}
     empleos = Empleo.objects.all()
@@ -25,13 +25,13 @@ def get_avatar_url_ctx(request):
         return {"url": avatars[0].image.url}
     return {}
 
-
 def search(request):
     avatar_ctx = get_avatar_url_ctx(request)
     context_dict = {**avatar_ctx}
     if request.GET['search_param']:
         search_param = request.GET['search_param']
         query = Q(empresa__contains=search_param)
+        query.add(Q(empresa__contains=search_param), Q.OR)
         empleos = Empleo.objects.filter(query)
         context_dict.update({
             'empleos': empleos,
@@ -42,7 +42,6 @@ def search(request):
         context=context_dict,
         template_name="home/main.html",
     )
-
 
 def AboutSebaView(request):
     return render(
